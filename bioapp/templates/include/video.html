@@ -1,0 +1,82 @@
+{% load static %}
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .mh1 {
+      padding: 0px;
+      text-align: center;
+      color: red;
+    }
+
+    body {
+      background-color: peru;
+    }
+
+    #mh {
+      text-align:center;
+    }
+    @media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}
+  </style>
+</head>
+
+<body>
+
+<div style="text-align: center;">
+  <video id="video2" width="609px" height="400px">
+    <source src="{% static "video/Motivation.mp4" %}" type="video/mp4">
+    <source src="{% static "video/Motivation.mp4" %}" type="video.ogg">
+   Your browser does not support HTML video.
+   </video>
+</div>
+
+<div class="mh1">
+  <button onclick="playPause()">Play/Pause</button>
+  <button onclick="makeBig()">Big</button>
+  <button onclick="makeSmall()">Small</button>
+  <button onclick="makeNormal()">Normal</button>
+</div>
+<br><br><br>
+<script>
+  var myVideo = document.getElementById("video2");
+  
+  function playPause() {
+  if (myVideo.paused) myVideo.play();
+  else
+  myVideo.pause();
+  }
+  
+  function makeBig() {
+  myVideo.width = 600;
+  }
+  
+  function makeSmall() {
+  myVideo.width = 440;
+  }
+  
+  function makeNormal() {
+  myVideo.width = 500;
+  }
+  </script>
+
+<div id="mh">
+<audio controls>
+  <source src="{% static "audio/maa.mp3" %}" type="audio/ogg">
+  <source src="{% static "audio/maa.mp3" %}" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+</div>
+
+<br><br><br><br>
+
+
+
+
+
+</body>
+</html>
